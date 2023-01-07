@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import search from '../../images/icons/search.png';
+import lightSearch from '../../images/icons/light-search.svg';
+import darkSearch from '../../images/icons/dark-search.svg';
 
 import './SearchBar.scss';
 
-const SearchBar = () => {
+const SearchBar = ({ isDarkTheme }) => {
   const [terms, setTerms] = useState('');
 
   const handleChange = (event) => setTerms(event.currentTarget.value);
@@ -14,7 +15,11 @@ const SearchBar = () => {
       <div className="search__container">
         <form className="search__form">
           <div className="search__inner">
-            <img className="search__icon" src={search} alt="Search" />
+            <img
+              className="search__icon"
+              src={`${isDarkTheme ? darkSearch : lightSearch}`}
+              alt="Search"
+            />
             <input
               className="search__input"
               type="text"

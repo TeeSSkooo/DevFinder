@@ -30,7 +30,13 @@
 }
 
 .app.dark-theme .header__theme-btn {
-  background-color: #7979f6;
+  border: 1px solid #7979f6;
+  color: #7979f6;
+
+  &:hover {
+    color: #fff;
+    background-color: #7979f6;
+  }
 }
 
 .app.dark-theme .search__form {
@@ -40,4 +46,12 @@
 
 .app.dark-theme .search__btn {
   background-color: #7979f6;
+}
+
+.app.dark-theme .user-info__name {
+  color: #f7f8ff;
+}
+
+.app.dark-theme .user-info__login {
+  color: #7979f6;
 }

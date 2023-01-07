@@ -1,0 +1,109 @@
+.user-info__wrapper {
+  box-shadow: 0 0 15px #ccc;
+  border-radius: 15px;
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+.user-info__img {
+  img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.user-info__descr {
+  flex: 1 1 auto;
+}
+
+.user-info__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  div:first-child {
+    flex: 1 1 50%;
+  }
+
+  div:last-child {
+    flex: 1 1 50%;
+  }
+}
+
+.user-info__name {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  line-height: 35px;
+  color: #343546;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.user-info__login {
+  display: inline-block;
+  color: #0079ff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.user-info__join-date {
+  word-spacing: 3px;
+  text-align: right;
+  color: #95939c;
+}
+
+.user-info__position {
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #8b898b;
+}
+
+.user-info__row {
+  margin-bottom: 30px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: flex;
+  background-color: #d0d6ef;
+}
+
+.user-info__col {
+  flex: 1 1 33.333%;
+  text-align: center;
+
+  h3 {
+    font-weight: 500;
+    color: #8b898b;
+  }
+
+  div {
+    color: #343546;
+    font-weight: 700;
+    font-size: 21px;
+  }
+}
+
+.user-info__links {
+  display: flex;
+
+  div {
+    flex: 1 1 50%;
+  }
+
+  a {
+    display: block;
+    padding-left: 10px;
+    text-decoration: none;
+    color: #8b898b;
+  }
+}
+
+.links-wrapper {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
