@@ -1,0 +1,41 @@
+.header {
+  margin-bottom: 40px;
+}
+
+.header__container {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #343546;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__theme-btn {
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0079ff;
+  transition: all 0.3s ease-in-out 0s;
+
+  &:hover {
+    background-color: #2d8fff;
+  }
+}
+
+.header__icon {
+  width: 30px;
+}

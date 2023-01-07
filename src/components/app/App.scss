@@ -1,0 +1,43 @@
+[class$='__container'] {
+  max-width: 730px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.light-theme {
+  color: #c5c5c5;
+  background-color: #f7f8ff;
+}
+
+.dark-theme {
+  color: #ffd500;
+  background-color: #16181d;
+}
+
+.light-theme,
+.dark-theme {
+  transition: all 0.2s ease-in-out 0s;
+}
+
+// ======================================================================
+
+.app {
+  height: 100vh;
+}
+
+.app.dark-theme .logo {
+  color: #f7f8ff;
+}
+
+.app.dark-theme .header__theme-btn {
+  background-color: #7979f6;
+}
+
+.app.dark-theme .search__form {
+  box-shadow: 0 0 15px #fff;
+  color: #fff;
+}
+
+.app.dark-theme .search__btn {
+  background-color: #7979f6;
+}
