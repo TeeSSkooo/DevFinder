@@ -1,5 +1,3 @@
-import './UserInfo.scss';
-
 import lightLocation from '../../images/icons/light-location.png';
 import darkLocation from '../../images/icons/dark-location.png';
 import lightGithub from '../../images/icons/light-github.png';
@@ -8,6 +6,9 @@ import lightTwitter from '../../images/icons/light-twitter.png';
 import darkTwitter from '../../images/icons/dark-twitter.png';
 import lightCompany from '../../images/icons/light-company.png';
 import darkCompany from '../../images/icons/dark-company.png';
+
+import './UserInfo.scss';
+import './media.scss';
 
 function formatDate(date) {
   const dateTime = new Date(date);

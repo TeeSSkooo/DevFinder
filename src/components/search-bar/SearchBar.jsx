@@ -6,6 +6,7 @@ import lightSearch from '../../images/icons/light-search.svg';
 import darkSearch from '../../images/icons/dark-search.svg';
 
 import './SearchBar.scss';
+import './media.scss';
 
 const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
   const [terms, setTerms] = useState('');

@@ -2,6 +2,7 @@ import moon from '../../images/icons/moon.png';
 import sun from '../../images/icons/sun.png';
 
 import './Header.scss';
+import './media.scss';
 
 const Header = ({ darkTheme, setDarkTheme }) => {
   return (

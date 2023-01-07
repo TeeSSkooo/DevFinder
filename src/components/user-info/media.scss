@@ -1,0 +1,41 @@
+@media (max-width: 660px) {
+  .user-info__wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .user-info__name {
+    font-size: 24px;
+  }
+
+  .user-info__join-date {
+    font-size: 14px;
+  }
+
+  .user-info__row {
+    padding: 15px 5px;
+  }
+}
+
+@media (max-width: 390px) {
+  .user-info__join-date {
+    font-size: 12px;
+  }
+
+  .user-info__row {
+    padding: 15px 5px;
+  }
+
+  .user-info__col {
+    h3 {
+      font-size: 12px;
+    }
+  }
+
+  .user-info__links {
+    a {
+      font-size: 12px;
+    }
+  }
+}
