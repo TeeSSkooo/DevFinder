@@ -21,6 +21,8 @@ function setContent(process, props) {
               boxShadow: '0 0 15px #ccc',
               borderRadius: '15px',
               textAlign: 'center',
+              backgroundColor: `${props.isDarkTheme ? '#20232a' : '#fff'}`,
+              transition: 'all 0.2s ease-in-out 0s',
             }}
           >
             <h2
@@ -47,6 +49,8 @@ function setContent(process, props) {
               boxShadow: '0 0 15px #ccc',
               borderRadius: '15px',
               textAlign: 'center',
+              backgroundColor: `${props.isDarkTheme ? '#20232a' : '#fff'}`,
+              transition: 'all 0.2s ease-in-out 0s',
             }}
           >
             <img

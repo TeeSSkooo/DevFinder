@@ -24,33 +24,36 @@
   height: 100vh;
 }
 
-.app.dark-theme .logo {
-  color: #f7f8ff;
-}
+.app.dark-theme {
+  .logo {
+    color: #f7f8ff;
+  }
 
-.app.dark-theme .header__theme-btn {
-  border: 1px solid #7979f6;
-  color: #7979f6;
+  .header__theme-btn {
+    border: 1px solid #7979f6;
+    color: #7979f6;
 
-  &:hover {
+    &:hover {
+      color: #fff;
+      background-color: #7979f6;
+    }
+  }
+
+  .search__form {
+    box-shadow: 0 0 15px #fff;
     color: #fff;
+    background-color: #20232a;
+  }
+
+  .search__btn {
     background-color: #7979f6;
   }
-}
 
-.app.dark-theme .search__form {
-  box-shadow: 0 0 15px #fff;
-  color: #fff;
-}
+  .user-info__name {
+    color: #f7f8ff;
+  }
 
-.app.dark-theme .search__btn {
-  background-color: #7979f6;
-}
-
-.app.dark-theme .user-info__name {
-  color: #f7f8ff;
-}
-
-.app.dark-theme .user-info__login {
-  color: #7979f6;
+  .user-info__login {
+    color: #7979f6;
+  }
 }
