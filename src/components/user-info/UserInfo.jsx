@@ -6,6 +6,8 @@ import lightTwitter from '../../images/icons/light-twitter.png';
 import darkTwitter from '../../images/icons/dark-twitter.png';
 import lightCompany from '../../images/icons/light-company.png';
 import darkCompany from '../../images/icons/dark-company.png';
+import lightArrow from '../../images/icons/light-arrow.png';
+import darkArrow from '../../images/icons/dark-arrow.png';
 
 import './UserInfo.scss';
 import './media.scss';
@@ -35,8 +37,10 @@ function formatDate(date) {
   };
 }
 
-const UserInfo = ({ isDarkTheme, user }) => {
+const UserInfo = ({ isDarkTheme, user, setProcess }) => {
   const { year, month, day } = formatDate(user.created);
+
+  const handleClick = () => setProcess('confirmed list');
 
   return (
     <section className="user-info">
@@ -44,6 +48,21 @@ const UserInfo = ({ isDarkTheme, user }) => {
         <div className="user-info__wrapper">
           <div className="user-info__img">
             <img src={user.thumbnail} alt="Avatar" />
+            <div className="user-info__link-row">
+              <img
+                className="user-info__arrow-back"
+                src={`${isDarkTheme ? darkArrow : lightArrow}`}
+                alt="Arrow back"
+              />
+              <a
+                className="user-info__link"
+                href="#"
+                tabIndex="0"
+                onClick={handleClick}
+              >
+                Back to list
+              </a>
+            </div>
           </div>
           <div className="user-info__descr">
             <div className="user-info__inner">

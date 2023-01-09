@@ -56,11 +56,41 @@
     background-color: #7979f6;
   }
 
+  .users__list {
+    background-color: #20232a;
+  }
+
+  .users__list-item {
+    &:hover {
+      background-color: #7979f6;
+    }
+
+    &:hover .users__login {
+      color: #fff;
+    }
+  }
+
+  .users__login {
+    color: #7979f6;
+  }
+
+  .users__id {
+    color: #f7f8ff;
+  }
+
+  .user-info__wrapper {
+    background-color: #20232a;
+  }
+
   .user-info__name {
     color: #f7f8ff;
   }
 
   .user-info__login {
+    color: #7979f6;
+  }
+
+  .user-info__link {
     color: #7979f6;
   }
 }

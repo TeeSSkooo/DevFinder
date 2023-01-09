@@ -2,6 +2,10 @@
   .user-info__wrapper {
     flex-direction: column;
   }
+
+  .user-info__img {
+    text-align: center;
+  }
 }
 
 @media (max-width: 450px) {

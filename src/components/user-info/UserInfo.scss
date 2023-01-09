@@ -1,16 +1,45 @@
+.user-info {
+  padding-bottom: 15px;
+}
+
 .user-info__wrapper {
   box-shadow: 0 0 15px #ccc;
   border-radius: 15px;
   display: flex;
   gap: 30px;
   padding: 20px;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 .user-info__img {
-  img {
+  & > img {
+    margin-bottom: 15px;
     max-width: 150px;
     border-radius: 50%;
   }
+}
+
+.user-info__link-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info__arrow-back {
+  margin-right: 5px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.user-info__link {
+  display: inline-block;
+  font-weight: 500;
+  color: #0079ff;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .user-info__descr {

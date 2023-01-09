@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 import GithubService from '../../services/GithubService';
@@ -8,7 +9,7 @@ import darkSearch from '../../images/icons/dark-search.svg';
 import './SearchBar.scss';
 import './media.scss';
 
-const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
+const SearchBar = ({ isDarkTheme, setProcess, users, setUsers }) => {
   const githubService = new GithubService();
 
   const findUser = useDebouncedCallback((name) => {
@@ -17,8 +18,8 @@ const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
     githubService
       .getUserByName(name)
       .then((user) => {
-        setUser(user);
-        setProcess('confirmed');
+        setUsers([...users, user]);
+        setProcess('confirmed list');
       })
       .catch(() => setProcess('error'));
   }, 400);

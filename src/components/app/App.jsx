@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Header from '../header/Header';
 import SearchBar from '../search-bar/SearchBar';
+import UsersList from '../users-list/UsersList';
 import UserInfo from '../user-info/UserInfo';
 import Spinner from '../spinner/Spinner';
 
@@ -38,8 +39,23 @@ function setContent(process, props) {
       );
     case 'loading':
       return <Spinner isDarkTheme={props.isDarkTheme} />;
-    case 'confirmed':
-      return <UserInfo isDarkTheme={props.isDarkTheme} user={props.user} />;
+    case 'confirmed list':
+      return (
+        <UsersList
+          users={props.users}
+          user={props.user}
+          setUser={props.setUser}
+          setProcess={props.setProcess}
+        />
+      );
+    case 'confirmed user':
+      return (
+        <UserInfo
+          isDarkTheme={props.isDarkTheme}
+          user={props.user}
+          setProcess={props.setProcess}
+        />
+      );
     case 'error':
       return (
         <div className="error__container">
@@ -64,7 +80,7 @@ function setContent(process, props) {
                 color: `${props.isDarkTheme ? '#7979f6' : '#2d8fff'}`,
               }}
             >
-              User not found :/
+              Users not found :/
             </h2>
           </div>
         </div>
@@ -77,9 +93,8 @@ function setContent(process, props) {
 export default function App() {
   const [isDarkTheme, setDarkTheme] = useState(false);
   const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
   const [process, setProcess] = useState('waiting');
-
-  const searchUser = (name) => setUser(name);
 
   const changeTheme = () => setDarkTheme((darkTheme) => !darkTheme);
 
@@ -88,10 +103,11 @@ export default function App() {
       <Header darkTheme={isDarkTheme} setDarkTheme={changeTheme} />
       <SearchBar
         isDarkTheme={isDarkTheme}
-        setUser={searchUser}
         setProcess={setProcess}
+        users={users}
+        setUsers={setUsers}
       />
-      {setContent(process, { isDarkTheme, user })}
+      {setContent(process, { isDarkTheme, setProcess, user, setUser, users })}
     </div>
   );
 }

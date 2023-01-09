@@ -25,6 +25,7 @@ export default class GithubServise {
       location: user.location,
       url: user.html_url,
       twitterUsername: user.twitter_username,
+      id: user.id,
     };
   }
 
