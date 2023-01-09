@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
 import GithubService from '../../services/GithubService';
 
@@ -9,11 +9,9 @@ import './SearchBar.scss';
 import './media.scss';
 
 const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
-  const [terms, setTerms] = useState('');
-
   const githubService = new GithubService();
 
-  const findUser = (name) => {
+  const findUser = useDebouncedCallback((name) => {
     setProcess('loading');
 
     githubService
@@ -23,20 +21,14 @@ const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
         setProcess('confirmed');
       })
       .catch(() => setProcess('error'));
-  };
+  }, 400);
 
-  const handleChange = (event) => setTerms(event.currentTarget.value);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    findUser(terms);
-  };
+  const handleChange = (event) => findUser(event.currentTarget.value);
 
   return (
     <section className="search">
       <div className="search__container">
-        <form className="search__form" onSubmit={handleSubmit}>
+        <form className="search__form">
           <div className="search__inner">
             <img
               className="search__icon"
@@ -47,12 +39,8 @@ const SearchBar = ({ isDarkTheme, setUser, setProcess }) => {
               className="search__input"
               type="text"
               placeholder="Search GitHub user..."
-              value={terms}
               onChange={handleChange}
             />
-            <button className="search__btn" type="submit">
-              Search
-            </button>
           </div>
         </form>
       </div>
