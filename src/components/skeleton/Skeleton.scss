@@ -1,0 +1,17 @@
+@import '../../styles/vars.scss';
+
+.skeleton {
+  &__inner {
+    padding: 15px;
+    box-shadow: 0 0 15px $shadow-color;
+    border-radius: 15px;
+    text-align: center;
+    background-color: $light-theme-inner-bg;
+    transition: all 0.2s ease-in-out 0s;
+  }
+
+  &__title {
+    text-align: center;
+    color: $light-theme-color;
+  }
+}

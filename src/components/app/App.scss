@@ -1,3 +1,5 @@
+@import '../../styles/vars.scss';
+
 [class$='__container'] {
   max-width: 730px;
   padding: 0 15px;
@@ -6,11 +8,11 @@
 
 .light-theme {
   color: #c5c5c5;
-  background-color: #f7f8ff;
+  background-color: $light-theme-bg;
 }
 
 .dark-theme {
-  background-color: #16181d;
+  background-color: $dark-theme-bg;
 }
 
 .light-theme,
@@ -24,73 +26,87 @@
   min-height: 100vh;
 }
 
+// =========================== Dark theme styles ===============================
+
 .app.dark-theme {
   .logo {
-    color: #f7f8ff;
+    color: $light-theme-inner-bg;
   }
 
   .header__theme-btn {
-    border: 1px solid #7979f6;
-    color: #7979f6;
+    border: 1px solid $dark-theme-color;
+    color: $dark-theme-color;
 
     &:hover {
-      color: #fff;
-      background-color: #7979f6;
+      color: $light-theme-inner-bg;
+      background-color: $dark-theme-color;
     }
   }
 
   .search__form {
-    box-shadow: 0 0 15px #fff;
-    color: #fff;
-    background-color: #20232a;
+    box-shadow: 0 0 15px $shadow-color;
+    color: $dark-theme-inner-bg;
+    background-color: $dark-theme-inner-bg;
   }
 
   .search__input {
+    color: $light-theme-inner-bg;
+
     &:focus {
       outline: none;
-      border-bottom: 2px solid #7979f6;
+      border-bottom: 2px solid $dark-theme-color;
     }
   }
 
+  .error__inner,
+  .skeleton__inner {
+    background-color: $dark-theme-inner-bg;
+  }
+
+  .error__message,
+  .skeleton__title {
+    color: $dark-theme-color;
+  }
+
   .search__btn {
-    background-color: #7979f6;
+    background-color: $dark-theme-color;
   }
 
   .users__list {
-    background-color: #20232a;
+    background-color: $dark-theme-inner-bg;
   }
 
   .users__list-item {
     &:hover {
-      background-color: #7979f6;
+      background-color: $dark-theme-color;
     }
 
     &:hover .users__login {
-      color: #fff;
+      color: $dark-theme-inner-bg;
     }
   }
 
   .users__login {
-    color: #7979f6;
+    color: $dark-theme-color;
   }
 
   .users__id {
-    color: #f7f8ff;
+    color: $light-theme-inner-bg;
   }
 
   .user-info__wrapper {
-    background-color: #20232a;
+    background-color: $dark-theme-inner-bg;
   }
 
   .user-info__name {
-    color: #f7f8ff;
+    color: $dark-theme-inner-bg;
   }
 
   .user-info__login {
-    color: #7979f6;
+    color: $dark-theme-color;
   }
 
   .user-info__link {
-    color: #7979f6;
+    color: $dark-theme-color;
   }
 }

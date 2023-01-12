@@ -2,41 +2,18 @@ import { useState } from 'react';
 
 import Header from '../header/Header';
 import SearchBar from '../search-bar/SearchBar';
-import UsersList from '../users-list/UsersList';
-import UserInfo from '../user-info/UserInfo';
+import SearchError from '../search-error/SearchError';
+import Skeleton from '../skeleton/Skeleton';
 import Spinner from '../spinner/Spinner';
-
-import errorLight from '../../images/not-found-light.png';
-import errorDark from '../../images/not-found-dark.png';
+import UserInfo from '../user-info/UserInfo';
+import UsersList from '../users-list/UsersList';
 
 import './App.scss';
 
 function setContent(process, props) {
   switch (process) {
     case 'waiting':
-      return (
-        <div className="preload__container">
-          <div
-            style={{
-              padding: '15px',
-              boxShadow: '0 0 15px #ccc',
-              borderRadius: '15px',
-              textAlign: 'center',
-              backgroundColor: `${props.isDarkTheme ? '#20232a' : '#fff'}`,
-              transition: 'all 0.2s ease-in-out 0s',
-            }}
-          >
-            <h2
-              style={{
-                textAlign: 'center',
-                color: `${props.isDarkTheme ? '#7979f6' : '#2d8fff'}`,
-              }}
-            >
-              Let's find developers from all over the world!
-            </h2>
-          </div>
-        </div>
-      );
+      return <Skeleton />;
     case 'loading':
       return <Spinner isDarkTheme={props.isDarkTheme} />;
     case 'confirmed list':
@@ -57,34 +34,7 @@ function setContent(process, props) {
         />
       );
     case 'error':
-      return (
-        <div className="error__container">
-          <div
-            style={{
-              padding: '15px',
-              boxShadow: '0 0 15px #ccc',
-              borderRadius: '15px',
-              textAlign: 'center',
-              backgroundColor: `${props.isDarkTheme ? '#20232a' : '#fff'}`,
-              transition: 'all 0.2s ease-in-out 0s',
-            }}
-          >
-            <img
-              src={`${props.isDarkTheme ? errorDark : errorLight}`}
-              alt="Error"
-              style={{ width: '200px', height: '200px' }}
-            />
-            <h2
-              style={{
-                textAlign: 'center',
-                color: `${props.isDarkTheme ? '#7979f6' : '#2d8fff'}`,
-              }}
-            >
-              Users not found :/
-            </h2>
-          </div>
-        </div>
-      );
+      return <SearchError isDarkTheme={props.isDarkTheme} />;
     default:
       throw new Error('Unexpected process!');
   }

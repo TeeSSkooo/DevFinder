@@ -1,0 +1,20 @@
+@import '../../styles/vars.scss';
+
+.error {
+  &__inner {
+    padding: 15px;
+    box-shadow: 0 0 15px $shadow-color;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.2s ease-in-out 0s;
+  }
+
+  &__img {
+    width: 200px;
+    height: 200px;
+  }
+
+  &__message {
+    color: $light-theme-color;
+  }
+}

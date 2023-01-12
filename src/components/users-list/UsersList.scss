@@ -1,53 +1,57 @@
-.users__list {
-  box-shadow: 0 0 15px #ccc;
-  border-radius: 15px;
-  padding: 20px;
-  transition: all 0.2s ease-in-out 0s;
-}
+@import '../../styles/vars.scss';
 
-.users__list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out 0s;
-
-  &:hover {
-    background-color: #0079ff;
+.users {
+  &__list {
+    box-shadow: 0 0 15px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out 0s;
   }
 
-  &:hover .users__login {
-    color: #fff;
+  &__list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
+
+    &:hover {
+      background-color: $light-theme-color;
+    }
+
+    &:hover .users__login {
+      color: #fff;
+    }
+
+    &:hover .users__id {
+      color: #fff;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
   }
 
-  &:hover .users__id {
-    color: #fff;
+  &__img {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid #ccc;
+  &__login,
+  &__id {
+    color: $light-theme-color;
+    font-weight: 500;
+    cursor: auto;
+    transition: all 0.2s ease-in-out 0s;
   }
-}
 
-.users__img {
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  &__id {
+    color: #343546;
   }
-}
-
-.users__login,
-.users__id {
-  color: #0079ff;
-  font-weight: 500;
-  cursor: auto;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.users__id {
-  color: #343546;
 }

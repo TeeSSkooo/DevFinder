@@ -1,12 +1,40 @@
+@import '../../styles/vars.scss';
+
 .header {
   margin-bottom: 40px;
-}
 
-.header__container {
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &__container {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__theme-btn {
+    border: 1px solid $light-theme-color;
+    color: $light-theme-color;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out 0s;
+
+    &:hover {
+      color: #fff;
+      background-color: $light-theme-color;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+  }
 }
 
 .logo {
@@ -14,30 +42,4 @@
   font-weight: 700;
   color: #343546;
   transition: all 0.2s ease-in-out 0s;
-}
-
-.header__inner {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.header__theme-btn {
-  border: 1px solid #2d8fff;
-  color: #2d8fff;
-  border-radius: 10px;
-  padding: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: transparent;
-  transition: all 0.2s ease-in-out 0s;
-
-  &:hover {
-    color: #fff;
-    background-color: #2d8fff;
-  }
-}
-
-.header__icon {
-  width: 30px;
 }

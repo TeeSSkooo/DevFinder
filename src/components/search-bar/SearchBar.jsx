@@ -24,7 +24,17 @@ const SearchBar = ({ isDarkTheme, setProcess, users, setUsers }) => {
       .catch(() => setProcess('error'));
   }, 400);
 
-  const handleChange = (event) => findUser(event.currentTarget.value);
+  const handleChange = (event) => {
+    const inputValue = event.currentTarget.value;
+
+    if (inputValue.length === 0) {
+      setProcess('waiting');
+      setUsers([]);
+      return;
+    }
+
+    findUser(inputValue);
+  };
 
   return (
     <section className="search">
