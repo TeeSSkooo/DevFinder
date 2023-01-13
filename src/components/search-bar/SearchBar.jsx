@@ -1,7 +1,8 @@
-import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 import GithubService from '../../services/GithubService';
+
+import { waiting, loading, confirmedList, error } from '../../actions';
 
 import lightSearch from '../../images/icons/light-search.svg';
 import darkSearch from '../../images/icons/dark-search.svg';
@@ -9,26 +10,27 @@ import darkSearch from '../../images/icons/dark-search.svg';
 import './SearchBar.scss';
 import './media.scss';
 
-const SearchBar = ({ isDarkTheme, setProcess, users, setUsers }) => {
+const SearchBar = ({ isDarkTheme, dispatch, users, setUsers }) => {
   const githubService = new GithubService();
 
   const findUser = useDebouncedCallback((name) => {
-    setProcess('loading');
+    dispatch(loading());
 
     githubService
       .getUserByName(name)
       .then((user) => {
         setUsers([...users, user]);
-        setProcess('confirmed list');
+
+        dispatch(confirmedList());
       })
-      .catch(() => setProcess('error'));
+      .catch(() => dispatch(error()));
   }, 400);
 
   const handleChange = (event) => {
     const inputValue = event.currentTarget.value;
 
     if (inputValue.length === 0) {
-      setProcess('waiting');
+      dispatch(waiting());
       setUsers([]);
       return;
     }

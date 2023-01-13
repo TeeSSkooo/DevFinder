@@ -1,9 +1,10 @@
 import { Helmet } from 'react-helmet';
 
+import GithubServise from '../../services/GithubService';
+import { loading, confirmedUser, error } from '../../actions';
+
 import './UsersList.scss';
 import './media.scss';
-
-import GithubServise from '../../services/GithubService';
 
 function getUniqueUsers(users) {
   const usersJson = [];
@@ -15,22 +16,23 @@ function getUniqueUsers(users) {
   return uniqueUsers.map((userJson) => JSON.parse(userJson));
 }
 
-const UsersList = ({ users, setUser, setProcess }) => {
+const UsersList = ({ users, setUser, dispatch }) => {
   const filteredUsers = users.filter((user) => user.login);
   const uniqueUsers = getUniqueUsers(filteredUsers);
 
   const githubService = new GithubServise();
 
   const handleClick = (event) => {
-    setProcess('loading');
+    dispatch(loading());
 
     githubService
       .getUserByName(event.currentTarget.dataset.userLogin)
       .then((user) => {
         setUser(user);
-        setProcess('confirmed user');
+
+        dispatch(confirmedUser());
       })
-      .catch(() => setProcess('error'));
+      .catch(() => dispatch(error()));
   };
 
   return (

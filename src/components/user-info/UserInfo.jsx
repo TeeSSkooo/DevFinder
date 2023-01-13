@@ -11,6 +11,8 @@ import darkCompany from '../../images/icons/dark-company.png';
 import lightArrow from '../../images/icons/light-arrow.png';
 import darkArrow from '../../images/icons/dark-arrow.png';
 
+import { confirmedList } from '../../actions';
+
 import './UserInfo.scss';
 import './media.scss';
 
@@ -39,10 +41,10 @@ function formatDate(date) {
   };
 }
 
-const UserInfo = ({ isDarkTheme, user, setProcess }) => {
+const UserInfo = ({ isDarkTheme, user, dispatch }) => {
   const { year, month, day } = formatDate(user.created);
 
-  const handleClick = () => setProcess('confirmed list');
+  const handleClick = () => dispatch(confirmedList());
 
   return (
     <>
